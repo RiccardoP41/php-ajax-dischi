@@ -17,10 +17,9 @@ include "db.php";
 <html lang="en" dir="ltr">
     <head>
         <meta charset="utf-8">
-        <title>ex-dischi-musicali</title>
+        <title>php-ajax-dichi</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.1.2/handlebars.min.js"></script>
-        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="dist/app.css">
     </head>
     <body>
         <header>
@@ -29,31 +28,20 @@ include "db.php";
             </div>
         </header>
 
-        <!-- <select class="scelta" name="">
-            <option value="All" class="selezione">All</option>
-            <option value="Pop" class="selezione">Pop</option>
-            <option value="Rock" class="selezione">Rock</option>
-            <option value="Metal" class="selezione">Metal</option>
-            <option value="Jazz" class="selezione">Jazz</option>
-        </select> -->
-        <div class="cds-container container">
-            <!-- Disco ad esempio -->
-            <!-- <div class="cd">
-                <img src="https://upload.wikimedia.org/wikipedia/en/9/9f/Ten_Summoner%27s_Tales.jpg" alt="">
-                <h3>Ten's Summoners Tales</h3>
-                <span class="author">Sting</span>
-                <span class="year">1993</span>
-            </div> -->
-        </div>
-
-        <script id="entry-template" type="text/x-handlebars-template">
-            <div class="cd {{genre}} ">
-                <img src="{{poster}}" alt="">
-                <h3>{{title}}</h3>
-                <span class="author">{{author}}</span>
-                <span class="year">{{year}}</span>
+        <main>
+            <div class="container">    
+                <?php foreach ($database as $value) { ?>
+                    <div class="cd">
+                        <img src="<?php echo $value["poster"];?>" alt="immagine disco">
+                        <h3><?php echo $value["title"]; ?></h3>
+                        <span class="author"><?php echo $value["author"]; ?></span>
+                        <span class="year"><?php echo $value["year"]; ?></span>
+                    </div>
+                <?php } ?>
             </div>
-        </script>
+        </main>
+
+
 
 
         <script src="main.js" charset="utf-8"></script>

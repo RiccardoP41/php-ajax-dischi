@@ -1,0 +1,22 @@
+
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+   font-family: $font-family;
+}
+
+
+header{
+    height: 60px;
+    background-color: $black;
+    @include flex(row,center,stretch);
+    .container{
+        width: 60vw;
+        @include flex(row,flex-start,center);
+        img{
+            height: 90%;
+            width: auto;
+        }
+    }
+}

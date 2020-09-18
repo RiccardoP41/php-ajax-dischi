@@ -1,0 +1,28 @@
+main{
+    background-color: lighten($black,10);
+    @include flex(row,center,stretch);
+    .container{
+        width: 60vw;
+        margin: 40px 0;
+        @include flex(row,flex-start,stretch);
+        flex-wrap: wrap;
+        .cd{
+            width: 170px;
+            height: 270px;
+            background-color: $black;
+            color: white;
+            margin: 30px 50px;
+            @include flex(column,flex-start,center);
+            text-align: center;
+            padding: 10px;
+            img{
+                width: 100%;
+                height: auto;
+            }
+            h3 {
+                margin: 10px 0;
+            }
+
+        }
+    }
+}
