@@ -1,17 +1,6 @@
 <?php
 include "db.php";
-
-
-
-
-
-
-
-
-
-
-
- ?>
+?>
 
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
@@ -29,7 +18,7 @@ include "db.php";
         </header>
 
         <main>
-            <div class="container">    
+            <div class="container">
                 <?php foreach ($database as $value) { ?>
                     <div class="cd">
                         <img src="<?php echo $value["poster"];?>" alt="immagine disco">
@@ -40,10 +29,5 @@ include "db.php";
                 <?php } ?>
             </div>
         </main>
-
-
-
-
-        <script src="main.js" charset="utf-8"></script>
     </body>
 </html>
