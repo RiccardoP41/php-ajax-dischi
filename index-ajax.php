@@ -10,21 +10,33 @@
         <header>
             <div class="container">
                 <img src="img/logo.png" alt="logo" />
+                <select class="select" name="">
+                    <option value="">All</option>
+                </select>
             </div>
         </header>
 
         <main>
             <div class="container dischi">
-                <script id="entry-template" type="text/x-handlebars-template">
-                    <div class="cd">
-                        <img src="{{poster}}" alt="immagine disco">
-                        <h3>{{title}}</h3>
-                        <span class="author">{{author}}</span>
-                        <span class="year">{{year}}</span>
-                    </div>
-                </script>
+
             </div>
+
+<!-- HB TEMPLATES -->
+            <script id="entry-template" type="text/x-handlebars-template">
+                <div class="cd">
+                    <img src="{{poster}}" alt="immagine disco">
+                    <h3>{{title}}</h3>
+                    <span class="author">{{author}}</span>
+                    <span class="year">{{year}}</span>
+                </div>
+            </script>
         </main>
         <script src="dist/app.js" charset="utf-8"></script>
+
+
+        <script id="entry-template-author" type="text/x-handlebars-template">
+            <option value="{{author}}">{{author}}</option>
+
+        </script>
     </body>
 </html>

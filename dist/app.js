@@ -10984,8 +10984,8 @@ $(document).ready(function () {
     url: "http://localhost/php-ajax-dischi/server.php",
     method: "GET",
     success: function success(risposta) {
-      console.log(risposta);
       printCd(risposta);
+      selectAuthor(risposta);
     },
     error: function error() {
       alert("E' avvenuto un errore.");
@@ -11010,6 +11010,29 @@ function printCd(data) {
 }
 
 ;
+
+function selectAuthor(data) {
+  var autori = [];
+
+  for (var i = 0; i < data.length; i++) {
+    var autore = data[i].author;
+
+    if (autori.includes(autore) == false) {
+      autori.push(autore);
+    }
+  }
+
+  var source = document.getElementById("entry-template-author").innerHTML;
+  var template = Handlebars.compile(source);
+
+  for (var i = 0; i < autori.length; i++) {
+    var context = {
+      "author": autori[i]
+    };
+    var html = template(context);
+    $(".select").append(html);
+  }
+}
 
 /***/ }),
 
